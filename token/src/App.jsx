@@ -80,7 +80,7 @@ export default function PoolTokenCalculator() {
           </div>
 
           <div>
-            <label className="block mb-2">Per Bot Amount (৳)</label>
+            <label className="block mb-2">Per Player Amount (৳)</label>
             <input
               type="number"
               value={perBet}
