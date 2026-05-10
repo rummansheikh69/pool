@@ -86,7 +86,7 @@ export default function PoolTokenCalculator() {
               value={perBet}
               placeholder="0"
               onChange={(e) => setPerBet(e.target.value)}
-              className="w-full p-3 rounded-xl bg-zinc-700 outline-none"
+              className="w-full p-3 rounded-xl bg-zinc-700 outline-none "
             />
           </div>
         </div>
@@ -102,7 +102,7 @@ export default function PoolTokenCalculator() {
                 placeholder="Player Name"
                 value={player.name}
                 onChange={(e) => updatePlayer(index, "name", e.target.value)}
-                className="p-3 rounded-xl bg-zinc-800 outline-none"
+                className="p-3 rounded-xl bg-zinc-800 outline-none capitalize"
               />
 
               <input
@@ -143,8 +143,9 @@ export default function PoolTokenCalculator() {
                     key={index}
                     className="bg-zinc-700 p-4 rounded-xl flex justify-between"
                   >
-                    <span>
-                      <strong>{r.from}</strong> ➜ <strong>{r.to}</strong>
+                    <span className=" capitalize ">
+                      <strong className=" mr-2">{r.from}</strong> ➜{" "}
+                      <strong className=" ml-2">{r.to}</strong>
                     </span>
 
                     <span className="font-bold text-green-400">
@@ -156,7 +157,7 @@ export default function PoolTokenCalculator() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold mb-4">বোট বিল</h2>
+              <h2 className="text-2xl font-bold mb-4">বোর্ড বিল</h2>
 
               <div className="space-y-3">
                 {results.boatBills.map((b, index) => (
@@ -164,7 +165,7 @@ export default function PoolTokenCalculator() {
                     key={index}
                     className="bg-zinc-700 p-4 rounded-xl flex justify-between"
                   >
-                    <span>{b.name}</span>
+                    <span className=" capitalize">{b.name}</span>
 
                     <span className="font-bold text-yellow-400">
                       ৳ {b.bill}
