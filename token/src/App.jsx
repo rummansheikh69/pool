@@ -72,19 +72,19 @@ export default function PoolTokenCalculator() {
             <label className="block mb-2">Total Games</label>
             <input
               type="number"
-              placeholder="0"
               value={totalGames}
+              placeholder="0"
               onChange={(e) => setTotalGames(e.target.value)}
               className="w-full p-3 rounded-xl bg-zinc-700 outline-none"
             />
           </div>
 
           <div>
-            <label className="block mb-2">Per Player Amount (৳)</label>
+            <label className="block mb-2">Per Bot Amount (৳)</label>
             <input
               type="number"
-              placeholder="0"
               value={perBet}
+              placeholder="0"
               onChange={(e) => setPerBet(e.target.value)}
               className="w-full p-3 rounded-xl bg-zinc-700 outline-none"
             />
@@ -102,7 +102,7 @@ export default function PoolTokenCalculator() {
                 placeholder="Player Name"
                 value={player.name}
                 onChange={(e) => updatePlayer(index, "name", e.target.value)}
-                className="p-3 rounded-xl bg-zinc-800 outline-none capitalize"
+                className="p-3 rounded-xl bg-zinc-800 outline-none"
               />
 
               <input
@@ -110,29 +110,30 @@ export default function PoolTokenCalculator() {
                 placeholder="Wins"
                 value={player.wins}
                 onChange={(e) => updatePlayer(index, "wins", e.target.value)}
-                className="p-3 rounded-xl bg-zinc-800 outline-none "
+                className="p-3 rounded-xl bg-zinc-800 outline-none"
               />
             </div>
           ))}
         </div>
 
-        <button
-          onClick={addPlayer}
-          className="mt-4 bg-blue-600 hover:bg-blue-700 px-5 py-3 rounded-xl font-semibold"
-        >
-          + Add Player
-        </button>
+        <div className="flex flex-col md:flex-row ">
+          <button
+            onClick={addPlayer}
+            className="mt-4 bg-blue-600 hover:bg-blue-700 px-5 py-3 rounded-xl font-semibold"
+          >
+            + Add Player
+          </button>
 
-        <button
-          onClick={calculate}
-          className="mt-4 ml-4 bg-green-600 hover:bg-green-700 px-5 py-3 rounded-xl font-semibold"
-        >
-          Generate Result
-        </button>
+          <button
+            onClick={calculate}
+            className="mt-4 md:ml-4 bg-green-600 hover:bg-green-700 px-5 py-3 rounded-xl font-semibold"
+          >
+            Generate Result
+          </button>
+        </div>
 
         {results && (
           <div className="mt-10 space-y-8">
-            {/* Pairwise Summary */}
             <div>
               <h2 className="text-2xl font-bold mb-4">টাকার হিসাব</h2>
 
@@ -142,7 +143,7 @@ export default function PoolTokenCalculator() {
                     key={index}
                     className="bg-zinc-700 p-4 rounded-xl flex justify-between"
                   >
-                    <span className=" capitalize">
+                    <span>
                       <strong>{r.from}</strong> ➜ <strong>{r.to}</strong>
                     </span>
 
@@ -154,7 +155,6 @@ export default function PoolTokenCalculator() {
               </div>
             </div>
 
-            {/* Boat Bills */}
             <div>
               <h2 className="text-2xl font-bold mb-4">বোট বিল</h2>
 
@@ -164,7 +164,7 @@ export default function PoolTokenCalculator() {
                     key={index}
                     className="bg-zinc-700 p-4 rounded-xl flex justify-between"
                   >
-                    <span className=" capitalize">{b.name}</span>
+                    <span>{b.name}</span>
 
                     <span className="font-bold text-yellow-400">
                       ৳ {b.bill}
@@ -175,6 +175,19 @@ export default function PoolTokenCalculator() {
             </div>
           </div>
         )}
+
+        {/* Footer Section */}
+        <div className="mt-12 border-t border-zinc-700 pt-6 flex flex-col md:flex-row md:items-center justify-between gap-4 text-sm text-zinc-400">
+          <div className="">
+            <span className="font-semibold text-white">Pool Location:</span>{" "}
+            Pujakhola mandir, Choto Boyra, Khulna, Bangladesh
+          </div>
+
+          <div className="">
+            <span className="font-semibold text-white">Developer:</span> Labib |
+            +8801401458564
+          </div>
+        </div>
       </div>
     </div>
   );
