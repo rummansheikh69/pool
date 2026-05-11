@@ -51,7 +51,8 @@ export default function PoolTokenCalculator() {
 
     const boatBills = formattedPlayers.map((p) => ({
       name: p.name,
-      bill: p.wins * Number(perBet),
+      // Board bill is always 15 টাকা per win/game
+      bill: p.wins * 15,
     }));
 
     setResults({
